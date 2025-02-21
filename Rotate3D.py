@@ -3,10 +3,10 @@ import datetime
 import math
 
 mainwin = Tk()
-mainwin.geometry("600x600")
+mainwin.geometry("800x600")
 mainwin.configure(bg="black")
 
-drawcanvas = Canvas(mainwin, width = 600, height = 600, bg = "black")
+drawcanvas = Canvas(mainwin, width = 800, height = 600, bg = "black")
 drawcanvas.place(x=0,y=0)
 
 fontmedium = ("Arial",45)
@@ -51,6 +51,7 @@ def DoRot_z():
 
 
 def DrawPoints():
+    drawcanvas.delete("all")
     for pt in Points3D:
         drawcanvas.create_text(centrex+pt[0]*100,centrey+pt[1]*100,text=pt[3], fill= "yellow")
         for pt2 in Points3D:
@@ -94,7 +95,7 @@ btnRot_z = Button(mainwin,text="Rotation about z-axis",font=fontsmall,command=Do
 btnRot_z.place(x=400,y=200)
 
 btnCube_x = Button(mainwin,text="Make cube",font=fontsmall,command=MakeCube, bg="black",fg="orange")
-btnCube_x.place(x=200,y=10)
+btnCube_x.place(x=20,y=10)
 
 
 mainwin.mainloop()
